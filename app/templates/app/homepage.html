@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class=" h-100 text-white bg-dark">
+ <div class="row">
+     <div class="col-md-2 text-center">
+          <h5>Do you want to see all the active orders?<a href='/activeOrders/'><br> Click here.</a></h5>
+     </div>
+     <div class="col-md-8 text-center">
+         <h1>BITCOIN EXCHANGE WEBSITE</h1><br>
+         <img src="https://thumbs.gfycat.com/SkinnyAccomplishedBoa.webp" class="img-responsive" alt="bitcoin spin" height="170"><br><br><br>
+         <div class="card text-dark bg-light mb-3" style="max-width: 100rem;">
+            <div class="card-header"><h4>Buy your bitcoin here</h4></div>
+            <div class="card-body">
+                <form class="form-text" name='purchase' method='post'>
+                {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label><h6>Quantity:</h6></label>
+                            <input type="text" name="quantity" placeholder="insert quantity" size="20">
+                        </div>
+                        <div class="col-md-5">
+                            <label><h6>Price:</h6></label>
+                            <input type="text" name="purchasePrice" placeholder="insert price" size="20">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Buy</button>
+                </form>
+            </div>
+         </div>
+        <br><br>
+        <br><br>
+        <div class="card text-dark bg-light mb-3" style="max-width: 100rem;">
+            <div class="card-header"><h4>Sell your bitcoin here</h4></div>
+            <div class="card-body">
+                <form class="form-text" name='sale' method='post'>
+                {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label><h6>Quantity:</h6></label>
+                            <input type="text" name="quantity" placeholder="insert quantity" size="20">
+                        </div>
+                        <div class="col-md-5">
+                            <label><h6>Price:</h6></label>
+                            <input type="text" name="salePrice" placeholder="insert price" size="20">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sell</button>
+                </form>
+            </div>
+        </div>
+     </div>
+     <div class="col-md-2 text-center">
+         <label><h5>User: {{ user }} <br> BTC: {{ btc }}</h5></label>
+     </div>
+ </div>
+
+</body>
+
+</html>
